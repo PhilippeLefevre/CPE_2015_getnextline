@@ -1,13 +1,3 @@
-/*
-** get_next_line.c for getnextline in /home/lefevr_h/Repository/Epitech/First_1/Elementary_Programming/CPE_2015_getnextline
-** 
-** Made by Philippe Lefevre
-** Login   <lefevr_h@epitech.net>
-** 
-** Started on  Thu Mar  3 02:40:12 2016 Philippe Lefevre
-** Last update Thu Mar  3 02:40:13 2016 Philippe Lefevre
-*/
-
 #include		"get_next_line.h"
 
 char			*my_realloc(char *cur, int n)
