@@ -15,7 +15,7 @@ char			*my_realloc(char *cur, int n)
   char			*res;
   int			i;
 
-  if ((res = malloc(sizeof(char) * n)) == NULL)
+  if ((res = malloc(n)) == NULL)
     return (NULL);
   i = -1;
   while (cur[++i])
@@ -41,7 +41,7 @@ char			*get_next_line(const int fd)
 			|| !(buf[c_buf] == '\0' && end--)) ? (NULL) : (lin)));
       buf[len] = ((c_buf = 0) ? ('\0') : (0));
     }
-  if ((lin = ((c_lin == 0) ? (malloc(sizeof(char) * (READ_SIZE + 1)))
+  if ((lin = ((c_lin == 0) ? (malloc((READ_SIZE + 1)))
 	      : (my_realloc(lin, (READ_SIZE + c_lin + 1))))) == NULL)
     return (NULL);
   while (buf[c_buf] && buf[c_buf] != '\n')
