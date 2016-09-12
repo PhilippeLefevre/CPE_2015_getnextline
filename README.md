@@ -1,4 +1,4 @@
-# CPE_2015_getnextline
+# Getnextline
 
 01 - Static / Buffering: 3/3
 * 01 - Lecture de la premiere ligne: OK
