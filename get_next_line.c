@@ -1,20 +1,5 @@
 #include		"get_next_line.h"
 
-char			*my_realloc(char *cur, int n)
-{
-  char			*res;
-  int			i;
-
-  if ((res = malloc(n)) == NULL)
-    return (NULL);
-  i = -1;
-  while (cur[++i])
-    res[i] = cur[i];
-  res[++i] = '\0';
-  free(cur);
-  return (res);
-}
-
 char			*get_next_line(const int fd)
 {
   static char		buf[READ_SIZE];
@@ -32,7 +17,7 @@ char			*get_next_line(const int fd)
       buf[len] = ((c_buf = 0) ? ('\0') : (0));
     }
   if ((lin = ((c_lin == 0) ? (malloc((READ_SIZE + 1)))
-	      : (my_realloc(lin, (READ_SIZE + c_lin + 1))))) == NULL)
+	      : (realloc(lin, (READ_SIZE + c_lin + 1))))) == NULL)
     return (NULL);
   while (buf[c_buf] && buf[c_buf] != '\n')
     lin[c_lin++] = buf[c_buf++];
